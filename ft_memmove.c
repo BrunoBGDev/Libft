@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 14:28:53 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/10 10:12:18 by bbraga           ###   ########.fr       */
+/*   Created: 2022/05/10 13:30:27 by bbraga            #+#    #+#             */
+/*   Updated: 2022/05/10 15:12:48 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	int	count;
+	unsigned int	count;
 
 	count = 0;
-	while (str[count] != (char)c)
-		count++;
-	if (str[count] == '\0')
-		return (0);
-	count++;	
-	return ((char *)&str[count]);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	const char	test[] = "Encontrador de letras.";
-	const char	text = 'z';
-	char		*i;
-
-	i = ft_strchr(test, text);
-
-	printf("%s\n", i);
-	return (0);
+	if (((unsigned char *)src) < ((unsigned char *)dest))
+	{
+		while (len)
+		{
+			len--;
+			((unsigned char *)dest)[len] = ((unsigned char *)src)[len];
+		}
+	}
+	else
+	{
+		while (count < len)
+		{
+			((unsigned char *)dest)[count] = ((unsigned char *)src)[count];
+			count++;
+		}
+	}
+	return ((unsigned char *)dest);
 }

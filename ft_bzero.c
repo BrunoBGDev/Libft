@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 14:28:53 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/10 10:12:18 by bbraga           ###   ########.fr       */
+/*   Created: 2022/05/10 10:41:30 by bbraga            #+#    #+#             */
+/*   Updated: 2022/05/10 13:47:25 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_bzero(void *s, size_t len)
 {
-	int	count;
-
-	count = 0;
-	while (str[count] != (char)c)
-		count++;
-	if (str[count] == '\0')
-		return (0);
-	count++;	
-	return ((char *)&str[count]);
+	ft_memset(s, 0, len);
 }
 
+#include <string.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	const char	test[] = "Encontrador de letras.";
-	const char	text = 'z';
-	char		*i;
+	char	text[50];
 
-	i = ft_strchr(test, text);
+	strcpy(text, "Test of the function.");
+	puts(text);
 
-	printf("%s\n", i);
+	ft_bzero(text, 5);
+	puts(text);
 	return (0);
 }
+

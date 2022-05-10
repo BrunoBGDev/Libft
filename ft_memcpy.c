@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 14:28:53 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/10 10:12:18 by bbraga           ###   ########.fr       */
+/*   Created: 2022/05/10 11:24:55 by bbraga            #+#    #+#             */
+/*   Updated: 2022/05/10 13:47:01 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	count;
+	unsigned int	count;
 
 	count = 0;
-	while (str[count] != (char)c)
+	while (n > 0)
+	{
+		((unsigned char *)dest)[count] = ((unsigned char *)src)[count];
 		count++;
-	if (str[count] == '\0')
-		return (0);
-	count++;	
-	return ((char *)&str[count]);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	const char	test[] = "Encontrador de letras.";
-	const char	text = 'z';
-	char		*i;
-
-	i = ft_strchr(test, text);
-
-	printf("%s\n", i);
-	return (0);
+		n--;
+	}
 }
