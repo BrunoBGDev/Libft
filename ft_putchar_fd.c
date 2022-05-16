@@ -6,13 +6,13 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:45:18 by bbraga            #+#    #+#             */
-/*   Updated: 2022/02/08 15:18:30 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/16 09:29:15 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 }

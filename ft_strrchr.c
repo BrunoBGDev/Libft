@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 16:21:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/16 14:52:04 by bbraga           ###   ########.fr       */
+/*   Created: 2022/05/16 11:37:35 by bbraga            #+#    #+#             */
+/*   Updated: 2022/05/16 14:50:32 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<unistd.h>
-
-static	void	ft_ptchar_fd(char c, int fld)
+char	*ft_strrchr(const char *s, int c)
 {
-	write(fld, &c, 1);
-}
+	int		count;
+	char	*ptr;
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483648)
+	count = 0;
+	ptr = 0;
+	while (s[count] != '\0')
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		if (s[count] == c)
+			ptr = (char *)(s + count);
+		count++;
 	}
-	if (n < 0)
+	if (s[count] == c)
 	{
-		write(fd, "-", 1);
-		n = -1 * n;
+		ptr = (char *)(s + count);
 	}
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-	}
-	ft_ptchar_fd((n % 10) + '0', fd);
+	return (ptr);
 }
 
 /*#include <stdio.h>
 
- int	main(void)
+int	main(void)
 {
-	ft_putnbr_fd(-1223334, 1);
-	printf("\n");
+	const char	test[] = "Encontrador de letras.";
+	const char	text = 't';
+	char		*i;
+
+	i = ft_strrchr(test, text);
+
+	printf("%s\n", i);
+	return (0);
 }*/

@@ -6,25 +6,25 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:28:53 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/10 10:12:18 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/16 13:39:56 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	count;
 
 	count = 0;
-	while (str[count] != (char)c)
+	while (s[count] != (char)c)
 		count++;
-	if (str[count] == '\0')
+	if (s[count] == '\0')
 		return (0);
 	count++;	
-	return ((char *)&str[count]);
+	return ((char *)&s[count]);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -36,4 +36,4 @@ int	main(void)
 
 	printf("%s\n", i);
 	return (0);
-}
+}*/

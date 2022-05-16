@@ -6,8 +6,11 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 08:35:22 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/11 14:28:32 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/16 14:57:02 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+int	ft_strncmp(const *s1, const *s2, size_t n)
+{
+	
+}

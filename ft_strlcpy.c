@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 09:09:12 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/11 14:28:17 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/16 11:20:05 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,7 +34,8 @@ size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize
 		count++;
 	return (count);
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -44,5 +45,4 @@ int	main(void)
 
 	printf("%s\n", result);
 	return (0);
-}
-
+}*/

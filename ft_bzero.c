@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 10:41:30 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/10 13:47:25 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/16 12:03:12 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@ void	ft_bzero(void *s, size_t len)
 
 int	main(void)
 {
-	char	text[50];
+	char	text[50] = "Test of the function.";
 
-	strcpy(text, "Test of the function.");
-	puts(text);
-
-	ft_bzero(text, 5);
-	puts(text);
+	printf("%s\n", text);	
+	ft_bzero(text, 21);
+	printf("%s\n", text);
 	return (0);
 }
 
