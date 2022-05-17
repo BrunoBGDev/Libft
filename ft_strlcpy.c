@@ -6,33 +6,42 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 09:09:12 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/16 11:20:05 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/16 21:49:21 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+static  size_t  ft_slen(const char *str)
 {
-	unsigned int	count;
+	size_t	len;
 
-	if (dstsize > 0)
-	{
-		count =0;
-		while( *(src[count]) != '\0')
-		{
-			if
-				(count == dstsize);
-				count--;
-				break;
-		}
-		*(dst[count]) = *(src[count]);
-		count++;
-	}
-	*(dst[count]) = '\0';
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
 
-	while (*(src[count]) !='\0')
-		count++;
-	return (count);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t  count;
+    size_t  src_len;
+
+    count = 0;
+	if (!dst || !src)
+            return (0);
+    src_len = ft_slen(src);
+    if (!dstsize)
+            return (src_len);
+    while (src[count] != '\0' && count < dstsize)
+    {
+        dst[count] = src[count];
+        count++;
+    }
+    if (dstsize < src_len)
+        dst[dstsize - 1] = '\0';
+    else if (dstsize != 0)
+        dst[count] = '\0';
+    return (src_len);
 }
 
 /*#include <stdio.h>
@@ -41,8 +50,9 @@ int	main(void)
 {
 	char	str1[] = "Test of the function.";
 	char	result[30] = "";
-	int		function = ft_strlcpy(result, str1, 5);
 
 	printf("%s\n", result);
+    ft_strlcpy(result, str1, 20);
+    printf("%s\n", result);
 	return (0);
 }*/
