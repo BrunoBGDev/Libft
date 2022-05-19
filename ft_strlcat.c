@@ -6,13 +6,13 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:19:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/16 22:09:19 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/19 17:01:49 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static  ft_slen(const char *str)
+static size_t	ft_slen(const char *str)
 {
     size_t len;
 

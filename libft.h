@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 09:47:56 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/17 12:08:08 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/19 17:03:26 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_bzero(void *s, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnchr(const char *str, int c);
 char	*ft_strchr(const char *str, int c);
+void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *str, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t len);
