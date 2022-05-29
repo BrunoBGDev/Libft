@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:48 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/17 13:42:44 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/28 18:02:10 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_memchr(const void *s, int c, size_t n)
 	}
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -39,4 +39,4 @@ int	main(void)
 	printf("%s\n", test);
 	ft_memchr(test, 'e', 15);
 	printf("%s\n", test);
-}
+}*/

@@ -6,17 +6,19 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 09:09:12 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/16 21:49:21 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/28 18:00:28 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static  size_t  ft_slen(const char *str)
+static size_t	ft_slen(const char *s)
 {
 	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0')
+	if (!s)
+		return (0);
+	while (s[len] != '\0')
 		len++;
 	return (len);
 }

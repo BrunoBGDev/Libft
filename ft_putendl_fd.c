@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 16:09:33 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/28 18:00:11 by bbraga           ###   ########.fr       */
+/*   Created: 2022/05/29 20:35:27 by bbraga            #+#    #+#             */
+/*   Updated: 2022/05/29 20:41:09 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	len;
-
-	len = 0;
 	if (!s)
-		return (0);
-	while (s[len] != '\0')
-		len++;
-	return (len);
+		return ;
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
+}
+
+int	main(void)
+{
+	char	str[] = "Teste";
+
+	ft_putendl_fd(str, 1);
+	return (0);
 }
