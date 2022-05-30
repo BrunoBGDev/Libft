@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:34:34 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/29 20:50:22 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 08:37:09 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static void	ft_mcpy(void *dest, const void *src, size_t n)
 	while (n > 0)
 	{
 		((unsigned char *)dest)[count] = ((unsigned char *)src)[count];
-		 count++;
-		 n--;
+		count++;
+		n--;
 	}
 }
 
@@ -45,9 +45,9 @@ static char	*ft_sdup(const char *s1)
 	len = ft_slen(s1) + 1;
 	dst = malloc(len);
 	if (!dst)
-			return (0);
+		return (0);
 	ft_mcpy(dst, s1, len);
-	return (dst);	
+	return (dst);
 }
 
 static void	*ft_mmove(void *dest, const void *src, size_t len)
@@ -95,7 +95,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (join);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -105,4 +105,4 @@ int	main(void)
 
 	printf("%s\n", result);
 	return (0);
-}
+}*/

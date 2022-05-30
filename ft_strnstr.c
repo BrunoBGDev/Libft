@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:04:02 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/28 18:01:05 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 08:47:52 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		c = 0;
 		while (str_stack[count + c] != '\0' && needle[c] != '\0'
-				&& str_stack[count + c] == needle[c] && count + c < len)
+			&& str_stack[count + c] == needle[c] && count + c < len)
 			c++;
-		if(c == s_len)
+		if (c == s_len)
 			return (str_stack + count);
 		count++;
 	}
@@ -60,4 +60,4 @@ int	main(void)
 	ptr = ft_strnstr(largestring, smallstring, 7);
 	printf("%s\n", ptr);
 	return (0);
-}*\
+}*/

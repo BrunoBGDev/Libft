@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:14:43 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/16 09:36:35 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 14:38:29 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-/* #include	<stdio.h>
-
+/*#include	<stdio.h>
 
 int	main(void)
 {
 	printf("Resultado de ft_putstr:\n");
 	ft_putstr_fd("42 Rio a veia!\n", 1);
 	return (0);
-} */
+}*/

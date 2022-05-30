@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 09:09:12 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/28 18:00:28 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 08:42:24 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -25,25 +25,25 @@ static size_t	ft_slen(const char *s)
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t  count;
-    size_t  src_len;
+	size_t	count;
+	size_t	src_len;
 
-    count = 0;
+	count = 0;
 	if (!dst || !src)
-            return (0);
-    src_len = ft_slen(src);
-    if (!dstsize)
-            return (src_len);
-    while (src[count] != '\0' && count < dstsize)
-    {
-        dst[count] = src[count];
-        count++;
-    }
-    if (dstsize < src_len)
-        dst[dstsize - 1] = '\0';
-    else if (dstsize != 0)
-        dst[count] = '\0';
-    return (src_len);
+		return (0);
+	src_len = ft_slen(src);
+	if (!dstsize)
+		return (src_len);
+	while (src[count] != '\0' && count < dstsize)
+	{
+		dst[count] = src[count];
+		count++;
+	}
+	if (dstsize < src_len)
+		dst[dstsize - 1] = '\0';
+	else if (dstsize != 0)
+		dst[count] = '\0';
+	return (src_len);
 }
 
 /*#include <stdio.h>

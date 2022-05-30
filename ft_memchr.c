@@ -6,37 +6,42 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:48 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/28 18:02:10 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 12:03:22 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	count;
-	const int			*chr;
-	const unsigned char	*str;
+	size_t		count;
+	const char	*str;
 
-	chr = &c;
-	str = (unsigned char *) s;
+	str = (const char *) s;
 	count = 0;
 	while (count < n)
 	{
-		if (str[count] != chr)
-			count++;
-		else if (str[count] == '\0')
+		if (str[count] == c)
+			return ((void *)(s + count));
 		count++;
 	}
+	return (0);
 }
 
-/*#include <stdio.h>
+/*#include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	char	test[20] = "Teste memchr.";
-	
-	printf("%s\n", test);
-	ft_memchr(test, 'e', 15);
-	printf("%s\n", test);
+	char	string[] = "Function testing...";
+	char	ch = 't';
+	char	*ft_m = ft_memchr(string, ch, 4);
+	char	*memc = memchr(string, ch, 4);
+
+	printf("The string before ft_memchr: %s\n", string);
+	printf("The string after ft_memchr: %s\n", ft_m);
+	printf("\n");
+	printf("The string before memchr: %s\n", string);
+	printf("The string after memchr: %s\n", memc);
+	return (0);
 }*/

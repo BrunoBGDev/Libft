@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:31:41 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/17 12:05:23 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 12:13:12 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-/*#include <stdio.h>
+/*#include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	char	test1[] = "5555444";
-	char	test2[] = "5556";
-	int		func = 0;
+	char	test1[] = "";
+	char	test2[] = "1234";
+	int		func1 = ft_memcmp(test1, test2, 2);
+	int		func2 = memcmp(test1,test2, 2);
 
-	func = ft_memcmp(test1, test2, 5);
-	printf("%d\n", func);
+	printf("Result of ft_memcmp: %d\n", func1);
+	printf("Result of memcmp: %d\n", func2);
 	return (0);
 }*/

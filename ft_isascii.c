@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:37:50 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/09 10:58:29 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 10:43:00 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,17 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
+
+/*#include <stdio.h>
+#include <ctype.h>
+
+int	main(void)
+{
+	char	ascii = 'a';
+	int	result1 = ft_isascii(ascii);
+	int	result2 = isascii(ascii);
+
+	printf("Result of ft_isascii is: %d \n", result1);
+	printf("Result of isascii is: %d \n", result2);
+	return (0);
+}*/

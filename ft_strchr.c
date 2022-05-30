@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:28:53 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/16 13:39:56 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/30 08:43:06 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 		count++;
 	if (s[count] == '\0')
 		return (0);
-	count++;	
+	count++;
 	return ((char *)&s[count]);
 }
 
