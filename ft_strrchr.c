@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:37:35 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/16 14:50:32 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/31 10:42:07 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,20 @@ char	*ft_strrchr(const char *s, int c)
 	return (ptr);
 }
 
-/*#include <stdio.h>
+/*#include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
 	const char	test[] = "Encontrador de letras.";
-	const char	text = 't';
-	char		*i;
+	const char	text = 'r';
+	char		*ft_srchr;
+	char		*srchr;
 
-	i = ft_strrchr(test, text);
+	ft_srchr = ft_strrchr(test, text);
+	srchr = strrchr(test, text);
 
-	printf("%s\n", i);
+	printf("Result of ft_strrchr: %s\n", ft_srchr);
+	printf("Result of strrchr: %s\n", srchr);
 	return (0);
 }*/

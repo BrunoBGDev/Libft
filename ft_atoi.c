@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:22:08 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 08:56:33 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/31 12:25:01 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,18 @@ int	ft_atoi(const char *str)
 	return (nbr);
 }
 
-/*#include <stdio.h>
+/*#include <stdlib.h>
+#include <stdio.h>
 
 int main () {
-   int val;
-   char str[20] = "Test";
+   int	val1;
+   int	val2;
+   char str1[] = "855";
+   char	str2[] = "855";
 
-   val = ft_atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
+   val1 = ft_atoi(str1);
+   printf("String value on ft_atoi = %s, Int value = %d\n", str1, val1);
+   val2 = atoi(str2);
+   printf("String value on atoi = %s, Int value = %d\n", str2, val2);
    return(0);
 }*/

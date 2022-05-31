@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:28:53 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 08:43:06 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/31 11:27:11 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,23 +17,28 @@ char	*ft_strchr(const char *s, int c)
 
 	count = 0;
 	while (s[count] != (char)c)
+	{
 		count++;
-	if (s[count] == '\0')
-		return (0);
-	count++;
+		if (s[count] == '\0')
+			return (0);
+	}
 	return ((char *)&s[count]);
 }
 
-/*#include <stdio.h>
+/*#include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
 	const char	test[] = "Encontrador de letras.";
-	const char	text = 'z';
-	char		*i;
+	const char	text = 'o';
+	char		*ft_schr;
+	char		*schr;
 
-	i = ft_strchr(test, text);
-
-	printf("%s\n", i);
+	ft_schr = ft_strchr(test, text);
+	schr = strchr(test, text);
+	
+	printf("Result of ft_strchr: %s\n", ft_schr);
+	printf("Result of strchr: %s\n", schr);
 	return (0);
 }*/

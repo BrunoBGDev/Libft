@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:04:02 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 08:47:52 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/05/31 10:35:25 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,19 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-/*#include <stdio.h>
+/*#include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	const char *largestring = "Foo Bar Baz";
-    const char *smallstring = "Bar";
-	char *ptr;
+	const char	*bigstring = "Cadete 42Rio!";
+    const char	*smallstring = "42";
+	char		*ft_sns;
+	char		*sns;
 
-	ptr = ft_strnstr(largestring, smallstring, 7);
-	printf("%s\n", ptr);
+	ft_sns = ft_strnstr(bigstring, smallstring, 9);
+	sns = strnstr(bigstring, smallstring, 9);
+	printf("The result of ft_strnstr: %s\n", ft_sns);
+	printf("The result of strnstr: %s\n", sns);
 	return (0);
 }*/
