@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 int	main(void)
@@ -37,4 +37,4 @@ int	main(void)
 	printf("Result of [text1] with strlen: %zu\n", strlen(text1));
 	printf("Result of [text2] with strlen: %zu\n", strlen(text2));
 	return (0);
-}
+}*/
