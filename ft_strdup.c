@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:58:39 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 08:31:27 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/01 22:24:53 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char	*ft_strdup(const char *s1)
 	if (!dst)
 		return (0);
 	ft_mcpy(dst, s1, len);
+	free(dst);
 	return (dst);
 }
 
@@ -54,9 +55,11 @@ char	*ft_strdup(const char *s1)
 
 int	main(void)
 {
-	char	src[] = "TesteCpysss!";
-	char	*result = ft_strdup(src);
+	char	src[] = "[result] After ft_strdup!";
+	char	*result = NULL;
 
+	printf("[result] Before ft_strmapi: %s\n", result);
+	result = ft_strdup(src);
 	printf("%s\n", result);
 	return (0);
 }*/

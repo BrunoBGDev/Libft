@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:29:37 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/01 15:28:03 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/02 12:47:14 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,24 @@ static size_t	ft_slen(char *str)
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		count;
+	int	count;
 	char	*str;
 	
 	count = 0;
-	if (s != NULL && f != NULL)
+	if (s == NULL || f == NULL)
+		return (NULL);
+	if (!(str = (char *)malloc(sizeof(char) * ft_slen((char *)s) + 1)))
+		return (NULL);
+	while (s[count] != '\0')
 	{
-		while (s[count] != '\0')
-		{
-			malloc(str * ft_slen(char *)s);
-			f(count, s[count]);
-			count++;
-		}
-		str = s;
-		free(str);
-		return (str);
+		str[count] = f(count, s[count]);
+		count++;
 	}
+	str[count] = '\0';
+	return (str);
 }
 
-static char	ft_tolw(unsigned int i, char chr)
+/*static char	ft_tolw(unsigned int i, char chr)
 {
 	if (chr >= 'A' && chr <= 'Z')
 		chr += 32;
@@ -57,9 +56,9 @@ static char	ft_tolw(unsigned int i, char chr)
 int	main(void)
 {
 	char	text[] = "TEST OF FUNCTION";
+	char	*func = ft_strmapi(text, (ft_tolw));
 
-	printf("[text] Before ft_striteri: %s\n", text);
-	ft_strmapi(text, (ft_tolw));	
-	printf("[text] After ft_striteri: %s\n", text);
+	printf("The original text is: %s\n", text);	
+	printf("Result with ft_strmapi: %s\n", func);
 	return (0);
-}
+}*/
