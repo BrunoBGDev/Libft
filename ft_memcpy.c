@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:24:55 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/31 12:15:27 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 08:59:41 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,6 +15,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned int	count;
 
+	if (!dst && !src)
+		return (NULL);
 	count = 0;
 	while (n > 0)
 	{

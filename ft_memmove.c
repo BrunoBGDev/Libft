@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:30:27 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 12:31:36 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 08:57:49 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned int	count;
 
 	count = 0;
+	if (!dst && !src)
+		return (NULL);
 	if (((unsigned char *)src) < ((unsigned char *)dst))
 	{
 		while (len)

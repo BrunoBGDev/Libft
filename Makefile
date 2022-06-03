@@ -20,12 +20,10 @@ CC = cc
 CC_FLAGS = -Wall -Wextra -Werror
  
 $(OBJS_DIR)%.o : %.c libft.h
-	@echo "Compiling: $<"
 	@cc $(CC_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS_PREFIXED)
 	@ar r $(NAME) $(OBJECTS_PREFIXED)
-	@echo "Libft Done !"
 
 all: $(NAME)
 
@@ -35,3 +33,5 @@ fclean: clean
 		rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

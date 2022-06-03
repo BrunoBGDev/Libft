@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:19:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 15:50:54 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 09:37:19 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static size_t	ft_slen(const char *s)
 	size_t	len;
 
 	len = 0;
-	if (!s)
-		return (0);
 	while (s[len] != '\0')
 		len++;
 	return (len);

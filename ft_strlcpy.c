@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 09:09:12 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 08:42:24 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 09:30:26 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,8 +29,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	src_len;
 
 	count = 0;
-	if (!dst || !src)
-		return (0);
 	src_len = ft_slen(src);
 	if (!dstsize)
 		return (src_len);

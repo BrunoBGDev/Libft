@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:58:39 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/01 22:24:53 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 09:48:09 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ char	*ft_strdup(const char *s1)
 	if (!dst)
 		return (0);
 	ft_mcpy(dst, s1, len);
-	free(dst);
 	return (dst);
 }
 
