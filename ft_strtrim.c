@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:22:52 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/02 19:29:40 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/02 22:50:00 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (check_set(s1[count], set) == 0)
 		count++;
+	rtrn = ft_strdup("");
 	if (count == ft_strlen(s1))
 	{
-		if (!(rtrn = ft_strdup("")))
+		if (!rtrn)
 			return (NULL);
 		else
 			return (rtrn);
@@ -46,3 +47,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	rtrn = ft_substr(s1, count, end - count);
 	return (rtrn);
 }
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+		char	string[] = "Test of function";
+		char	trim[] = "func";
+		char	*func = ft_strtrim(string, trim);
+
+		printf("String before ft_strtrim: %s\n", string);
+		printf("Result of ft_strtrim: %s\n", func);
+		return (0);
+}*/

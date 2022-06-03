@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:31:41 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/30 12:13:12 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/02 21:07:20 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (str1[count] != str2[count])
 			return (str1[count] - str2[count]);
-			count++;
+		count++;
 	}
 	return (0);
 }

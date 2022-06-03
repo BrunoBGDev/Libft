@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:38:55 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/01 22:38:01 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/02 20:13:59 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strncpy(char *dst, char *src, size_t len)
 	return (dst);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {
@@ -41,4 +41,4 @@ int	main()
 	ft_strncpy(str1, str2, 7);
 	printf("[str1] After ft_strncpy: %s \n", str1);
 	return (0);
-}
+}*/

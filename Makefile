@@ -9,29 +9,29 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 	   ft_strncmp.c ft_strncpy.c ft_strnstr.c ft_strrchr.c \
 	   ft_substr.c ft_tolower.c ft_toupper.c \
 
+NAME = libft.a
+
+OBJS_DIR = ./
 OBJS = $(SRCS:.c=.o)
+OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
+ 
+CC = cc
+ 
+CC_FLAGS = -Wall -Wextra -Werror
+ 
+$(OBJS_DIR)%.o : %.c libft.h
+	@echo "Compiling: $<"
+	@cc $(CC_FLAGS) -c $< -o $@
 
-INCLUDES = libft.h
-
-NAME = libft.a 
-
-CC	= cc
-RM	= rm -rf
-
-CFLAGS = -Wall -Wextra -Werror
-
-.c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+$(NAME): $(OBJECTS_PREFIXED)
+	@ar r $(NAME) $(OBJECTS_PREFIXED)
+	@echo "Libft Done !"
 
 all: $(NAME)
 
-$(NAME):	$(OBJS)
-			$(CC) -o $(NAME) $(OBJS)
-			ar r $(NAME) $(OBJS)
 clean:
-		$(RM) $(OBJS)
-
+	rm -rf $(OBJS)
 fclean: clean
-		$(RM) $(NAME)
+		rm -f $(NAME)
 
-re:	fclean all
+re: fclean all

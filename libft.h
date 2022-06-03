@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 09:47:56 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/01 15:27:56 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/02 21:04:50 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_bzero(void *s, size_t len);
 char	*ft_itoa(int n);
-char	**ft_split(char const *s, char c);
+//char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strdup(const char *s1);

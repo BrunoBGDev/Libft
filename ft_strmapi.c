@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:29:37 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/02 12:47:14 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/02 20:29:06 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_slen(char *str)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	if (!str)
@@ -26,13 +26,14 @@ static size_t	ft_slen(char *str)
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	count;
+	int		count;
 	char	*str;
-	
+
 	count = 0;
 	if (s == NULL || f == NULL)
 		return (NULL);
-	if (!(str = (char *)malloc(sizeof(char) * ft_slen((char *)s) + 1)))
+	str = (char *)malloc(sizeof(char) * ft_slen((char *)s) + 1);
+	if (!str)
 		return (NULL);
 	while (s[count] != '\0')
 	{
