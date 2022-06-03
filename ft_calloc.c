@@ -6,35 +6,20 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:19:01 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 09:52:53 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:39:27 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_bbzero(void *s, size_t n)
-{
-	size_t			count;
-	unsigned char	*str;
-
-	count = 0;
-	str = (unsigned char *)s;
-	while (count < n)
-	{
-		str[count] = 0;
-		count++;
-	}
-	s = str;
-}
-
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	ptr = malloc(count * size);
+	ptr = malloc(size * count);
 	if (!ptr)
 		return (NULL);
-	ft_bbzero(ptr, count);
+	ft_bzero(ptr, size);
 	return (ptr);
 }
 

@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:19:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 09:37:19 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:52:51 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static size_t	ft_slen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s[len] != '\0')
+	while (s[len] != 0)
 		len++;
 	return (len);
 }
@@ -33,8 +33,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_len = ft_slen(dst);
 	src_len = ft_slen(src);
 	i = dst_len;
-	if (dstsize == 0)
-		return (src_len);
 	if (dstsize < dst_len)
 		return (src_len + dstsize);
 	else

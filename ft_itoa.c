@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:21:36 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/02 20:51:30 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:15:13 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 char	*ft_itoa(int n)
 {
-	long	number;
 	size_t	len;
 	char	*str;
 
-	number = n;
 	len = 0;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	if (number < 0)
-		number = -number;
-	while (number > 0)
+	if (n < 0)
+		n = -n;
+	while (n > 0)
 	{
-		*(str + len) = number % 10 + '\0';
-		number /= 10;
+		*(str + len) = n % 10 + '\0';
+		n /= 10;
 		len++;
 	}
 	if (len == 0 && str[1] == '\0')
