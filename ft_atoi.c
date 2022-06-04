@@ -6,43 +6,38 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:22:08 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/31 12:25:01 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/03 16:38:36 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_isnbr(int c)
-{
-	return (c >= '0' && c <= '9');
-}
-
 int	ft_atoi(const char *str)
 {
 	long	count;
-	long	nbr;
+	long	rtn;
 	int		ngnbr;
 
 	count = 0;
-	nbr = 0;
-	ngnbr = 0;
+	rtn = 0;
+	ngnbr = 1;
 	while (str[count] != '\0' && (str[count] == 32
 			|| str[count] == '\t' || str[count] == '\n'
 			|| str[count] == '\r' || str[count] == '\v'
 			|| str[count] == '\f'))
 		count++;
-	if (str[count] != '\0' && str[count] == '-')
+	if (str[count] == '-' || str[count] == '+')
 	{
-		ngnbr = 1;
+		if (str[count] == '-')
+				ngnbr--;
 		count++;
 	}
-	else if (str[count] == '+')
+	while (ft_isdigit(str[count]))
+	{
+		rtn = rtn * 10 + (str[count] - '\0');
 		count++;
-	while (str[count] != '\0' && ft_isnbr(str[count]))
-		nbr = (nbr * 10) + (str[count++] - '0');
-	if (ngnbr == 1)
-		return (-nbr);
-	return (nbr);
+	}
+	return (rtn * ngnbr);
 }
 
 /*#include <stdlib.h>
