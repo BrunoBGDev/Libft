@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:21:36 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/05 12:25:47 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/06 15:29:44 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ static char	*ft_mall(char *rtn, long nb, int len, int isneg)
 {
 		rtn = ft_strdup("0");
 	if (nb != 0)
+	{
+		free(rtn);
 		rtn = malloc(sizeof(char) * (len + 1));
+	}
 	else
 		return (rtn);
 	if (!rtn)
@@ -71,6 +74,7 @@ char	*ft_itoa(int n)
 	if (!rtn)
 		return (0);
 	return (rtn);
+	free(rtn);
 }
 
 /*#include <stdlib.h>

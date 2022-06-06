@@ -6,13 +6,13 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:21:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 14:57:19 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/06 12:32:17 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	<unistd.h>
 
-static	void	ft_ptchar_fd(char c, int fld)
+static void	ft_ptchar_fd(char c, int fld)
 {
 	write(fld, &c, 1);
 }

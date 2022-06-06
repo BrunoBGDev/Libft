@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:20:22 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/05 23:36:13 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/06 11:49:12 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ static char	**ft_mallock(char **str, const char *s, char c)
 	count = 0;
 	i = 0;
 	j = 0;
-
 	while (s[j])
 	{
 		if (s[j] != c)
@@ -58,8 +57,8 @@ static char	**ft_mallock(char **str, const char *s, char c)
 		if (s[j + 1] == '\0' && s[j] != c)
 		{
 			str[i] = malloc(sizeof(char) * count + 1);
-				if (!str[i])
-					return (0);
+			if (!str[i])
+				return (0);
 		}
 		j++;
 	}
@@ -80,20 +79,20 @@ static char	**ft_strcpy(char **str, const char *s, char c)
 		if (s[j] != c)
 			str[count][i++] = s[j];
 		else if (j > 0 && s[j - 1] != c)
+		{
 			if (j != 0)
 			{
 				str[count][i] = '\0';
 				i = 0;
 				count++;
 			}
+		}
 		if (s[j + 1] == '\0' && s[j] != c)
 			str[count][i] = '\0';
 		j++;
 	}
 	return (str);
 }
-
-
 
 char	**ft_split(const char *s, char c)
 {
@@ -116,5 +115,4 @@ char	**ft_split(const char *s, char c)
 		ft_strcpy(rtn, s, c);
 	rtn[nbr] = 0;
 	return (rtn);
-
 }
