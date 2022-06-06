@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:22:08 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 16:38:36 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/05 13:28:33 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,30 @@
 int	ft_atoi(const char *str)
 {
 	long	count;
-	long	rtn;
-	int		ngnbr;
+	long	nbr;
+	long	ngnbr;
 
 	count = 0;
-	rtn = 0;
-	ngnbr = 1;
+	nbr = 0;
+	ngnbr = 0;
 	while (str[count] != '\0' && (str[count] == 32
 			|| str[count] == '\t' || str[count] == '\n'
 			|| str[count] == '\r' || str[count] == '\v'
 			|| str[count] == '\f'))
 		count++;
-	if (str[count] == '-' || str[count] == '+')
+	if (str[count] != '\0' && str[count] == '-')
 	{
-		if (str[count] == '-')
-				ngnbr--;
+		ngnbr = 1;
 		count++;
 	}
-	while (ft_isdigit(str[count]))
-	{
-		rtn = rtn * 10 + (str[count] - '\0');
+	else if (str[count] == '+')
 		count++;
-	}
-	return (rtn * ngnbr);
+	while (str[count] != '\0' && ft_isdigit(str[count]))
+		nbr = nbr * 10 + (str[count++] - '0');
+	if (ngnbr == 1)
+		return (-nbr);
+	return (nbr);
 }
-
 /*#include <stdlib.h>
 #include <stdio.h>
 

@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:22:52 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 15:18:03 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/04 15:55:01 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (rtrn);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -59,4 +59,4 @@ int	main(void)
 		printf("String before ft_strtrim: %s\n", string);
 		printf("Result of ft_strtrim: %s\n", func);
 		return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:19:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 15:52:51 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/05 13:04:46 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,29 @@ static size_t	ft_slen(const char *s)
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	j;
+	char	*str;
+	size_t	count;
+	size_t	rtn;
 	size_t	src_len;
 	size_t	dst_len;
 
-	j = 0;
+	str = (char *)src;
 	dst_len = ft_slen(dst);
-	src_len = ft_slen(src);
-	i = dst_len;
-	if (dstsize < dst_len)
-		return (src_len + dstsize);
+	src_len = ft_slen(str);
+	rtn = 0;
+	count = 0;
+	if (dstsize > dst_len)
+		rtn = src_len + dst_len;
 	else
-		while (src[j] && (dst_len + j) < dstsize)
-			dst[i++] = src[j++];
-	if ((dst_len + j) == dstsize && dst_len < dstsize)
-		dst[i--] = '\0';
-	else
-		dst[i] = '\0';
-	return (src_len + dst_len);
+		rtn = src_len + dstsize;
+	while (str[count] && (dst_len + 1) < dstsize)
+	{
+		dst[dst_len] = str[count];
+		dst_len++;
+		count++;
+	}		
+	dst[dst_len] = '\0';
+	return (rtn);
 }
 
 /*#include <stdio.h>
