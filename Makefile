@@ -9,12 +9,17 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 	   ft_strncmp.c ft_strncpy.c ft_strnstr.c ft_strrchr.c \
 	   ft_substr.c ft_tolower.c ft_toupper.c ft_strtrim.c\
 
-NAME = libft.a
+SRCSB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+		ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 
+NAME = libft.a
 OBJS_DIR = ./
+
 OBJS = $(SRCS:.c=.o)
-OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
  
+OBJSB = $(SRCSB:.c=.o)
+
 CC = cc
  
 CC_FLAGS = -Wall -Wextra -Werror
@@ -22,16 +27,20 @@ CC_FLAGS = -Wall -Wextra -Werror
 $(OBJS_DIR)%.o : %.c libft.h
 	@cc $(CC_FLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_PREFIXED)
+$(NAME): $(OBJS)
+	@ar r $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS) $(OBJSB)
+	@echo All Clear!!
 fclean: clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJSB)
+	@ar r $(NAME) $(OBJSB)
 
 .PHONY: all clean fclean re

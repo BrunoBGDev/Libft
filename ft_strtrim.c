@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:22:52 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/06 15:20:19 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/07 16:42:43 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 static int	check_set(char c, const char *set)
 {
 	while (*set)
+	{
 		if (c == *set++)
 			return (0);
+	}
 	return (1);
 }
 
@@ -26,6 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*rtrn;
 
+	rtrn = 0;
 	if (!s1)
 		return (NULL);
 	if (!set)
@@ -34,7 +37,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (check_set(s1[count], set) == 0)
 		count++;
-	rtrn = ft_strdup("");
 	if (count == ft_strlen(s1))
 	{
 		if (!rtrn)

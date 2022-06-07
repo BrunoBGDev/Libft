@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:21:36 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/06 15:29:44 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/07 20:17:30 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ static int	ft_check(long n)
 
 static char	*ft_mall(char *rtn, long nb, int len, int isneg)
 {
-		rtn = ft_strdup("0");
 	if (nb != 0)
 	{
-		free(rtn);
-		rtn = malloc(sizeof(char) * (len + 1));
+		rtn = malloc(len + 1);
 	}
 	else
 		return (rtn);
@@ -45,8 +43,9 @@ static char	*ft_mall(char *rtn, long nb, int len, int isneg)
 	isneg = 0;
 	if (nb < 0)
 	{
-		isneg++;
+		isneg = 1;
 		nb = -nb;
+		rtn[0] = '-';
 	}
 	rtn[len] = '\0';
 	while (--len)
@@ -69,12 +68,11 @@ char	*ft_itoa(int n)
 
 	check = ft_check(n);
 	negnb = 0;
-	rtn = 0;
+	rtn = ft_strdup("0");
 	rtn = ft_mall(rtn, n, check, negnb);
 	if (!rtn)
 		return (0);
 	return (rtn);
-	free(rtn);
 }
 
 /*#include <stdlib.h>

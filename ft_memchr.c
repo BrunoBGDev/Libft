@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:48 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/06 12:42:03 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/07 13:13:01 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		count;
-	const char	*str;
+	size_t			count;
+	unsigned char	*str;
+	unsigned char	chr;
 
-	str = (const char *) s;
+	chr = (unsigned char) c;
+	str = (unsigned char *) s;
 	count = 0;
 	while (count < n)
 	{
-		if (str[count] == c)
-			return ((void *)(s + count));
+		if (*str == chr)
+			return (str);
+		str++;
 		count++;
 	}
 	return (0);

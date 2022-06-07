@@ -6,22 +6,10 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 09:09:12 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 09:30:26 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/07 13:36:28 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-static size_t	ft_slen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	if (!s)
-		return (0);
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -29,18 +17,18 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	src_len;
 
 	count = 0;
-	src_len = ft_slen(src);
+	src_len = ft_strlen(src);
 	if (!dstsize)
 		return (src_len);
-	while (src[count] != '\0' && count < dstsize)
+	while (src[count] != '\0' && count < dstsize - 1)
 	{
 		dst[count] = src[count];
 		count++;
 	}
-	if (dstsize < src_len)
-		dst[dstsize - 1] = '\0';
-	else if (dstsize != 0)
+	if (count < dstsize)
 		dst[count] = '\0';
+	while (src[count] != 0)
+		count++;
 	return (src_len);
 }
 

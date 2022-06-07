@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:19:01 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/05 12:48:05 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/07 15:31:54 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*rtn;
 
-	rtn = (void *)malloc(count * size);
+	rtn = malloc(size * count);
 	if (!rtn)
-		return (NULL);
+		return (0);
 	ft_bzero(rtn, size * count);
-	return ((void *)rtn);
+	return (rtn);
 }
 
 /*#include <stdio.h>

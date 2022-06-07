@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:37:35 by bbraga            #+#    #+#             */
-/*   Updated: 2022/05/31 10:42:07 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/07 13:18:07 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		count;
 	char	*ptr;
+	char	chr;
 
+	chr = (char) c;
 	count = 0;
 	ptr = 0;
 	while (s[count] != '\0')
 	{
-		if (s[count] == c)
+		if (s[count] == chr)
 			ptr = (char *)(s + count);
 		count++;
 	}
-	if (s[count] == c)
+	if (s[count] == chr)
 	{
 		ptr = (char *)(s + count);
 	}

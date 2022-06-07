@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/27 11:58:39 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/07 20:09:22 by bbraga           ###   ########.fr       */
+/*   Created: 2022/06/07 17:58:12 by bbraga            #+#    #+#             */
+/*   Updated: 2022/06/07 18:00:37 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_lstsize(t_list *lst)
 {
-	char	*dst;
-	size_t	len;
+	int	count;
 
-	len = ft_strlen(s1) + 1;
-	dst = malloc(len);
-	if (!dst)
-		return (0);
-	ft_memcpy(dst, s1, len);
-	return (dst);
+	count = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-	char	src[] = "[result] After ft_strdup!";
-	char	*result = NULL;
-
-	printf("[result] Before ft_strmapi: %s\n", result);
-	result = ft_strdup(src);
-	printf("%s\n", result);
-	return (0);
-}*/
