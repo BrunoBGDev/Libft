@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 14:29:01 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/07 16:20:04 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/08 15:47:57 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	count;
 
 	if (!s)
-		return (NULL);
-	if ((size_t)start > ft_strlen(s))
-		return (ft_strdup(""));
-	rst = malloc(sizeof(char) * (len + 1));
-	count = 0;
+		return (0);
+	if (start > ft_strlen(s))
+	{
+		rst = (char *)malloc(sizeof(char));
+		*rst = '\0';
+		return (rst);
+	}
+	rst = (char *)malloc(sizeof(char) * len);
 	if (!rst)
 		return (0);
-	while (count < len)
+	rst[0] = '\0';
+	count = 0;
+	while (len > 0)
 	{
-		rst[count] = *(s + start + count);
+		rst[count] = s[start];	
 		count++;
+		start++;
+		len--;
 	}
 	rst[count] = '\0';
 	return (rst);

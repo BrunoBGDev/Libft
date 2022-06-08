@@ -6,21 +6,11 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:19:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/05 13:04:46 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/08 10:21:50 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_slen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len] != 0)
-		len++;
-	return (len);
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -31,8 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dst_len;
 
 	str = (char *)src;
-	dst_len = ft_slen(dst);
-	src_len = ft_slen(str);
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(str);
 	rtn = 0;
 	count = 0;
 	if (dstsize > dst_len)

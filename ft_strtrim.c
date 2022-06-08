@@ -6,47 +6,25 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:22:52 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/07 16:42:43 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/08 15:45:48 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_set(char c, const char *set)
-{
-	while (*set)
-	{
-		if (c == *set++)
-			return (0);
-	}
-	return (1);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	count;
 	size_t	end;
 	char	*rtrn;
 
-	rtrn = 0;
 	if (!s1)
-		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
-	count = 0;
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
 	end = ft_strlen(s1);
-	while (check_set(s1[count], set) == 0)
-		count++;
-	if (count == ft_strlen(s1))
-	{
-		if (!rtrn)
-			return (NULL);
-		else
-			return (rtrn);
-	}
-	while (check_set(s1[end - 1], set) == 0)
+	while (end && ft_strchr(set, s1[end]))
 		end--;
-	rtrn = ft_substr(s1, count, end - count);
+	rtrn = ft_substr((char *)s1, 0, end + 1);
 	return (rtrn);
 }
 
