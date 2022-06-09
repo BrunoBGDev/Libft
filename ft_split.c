@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:20:22 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/08 14:20:04 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/08 21:42:23 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,86 +33,49 @@ static int	ft_check(const char *s, char c)
 	return (count);
 }
 
-static char	**ft_mallock(char **str, const char *s, char c)
+static char	*ft_minitrim(const char *str, int start, int end)
 {
+	char	*chr;
 	size_t	count;
-	int		i;
-	int		j;
 
 	count = 0;
-	i = 0;
-	j = 0;
-	while (s[j])
+	chr = malloc(sizeof(char) * (end - start) + 1);
+	if (!chr)
+		return (0);
+	while (start < end)
 	{
-		if (s[j] != c)
-			count++;
-		else if (j > 0 && s[j - 1] != c)
-		{
-			str[i] = malloc(sizeof(char) * (count + 1));
-			if (!str[count])
-				return (0);
-			count = 0;
-			i++;
-		}
-		if (s[j + 1] == '\0' && s[j] != c)
-		{
-			str[i] = malloc(sizeof(char) * count + 1);
-			if (!str[i])
-				return (0);
-		}
-		j++;
+		chr[count] = str[start];
+		count++;
+		start++;
 	}
-	return (str);
-}
-
-static char	**ft_strcpy(char **str, const char *s, char c)
-{
-	int	count;
-	int	i;
-	int	j;
-
-	count = 0;
-	i = 0;
-	j = 0;
-	while (s[j])
-	{
-		if (s[j] != c)
-			str[count][i++] = s[j];
-		else if (j > 0 && s[j - 1] != c)
-		{
-			if (j != 0)
-			{
-				str[count][i] = '\0';
-				i = 0;
-				count++;
-			}
-		}
-		if (s[j + 1] == '\0' && s[j] != c)
-			str[count][i] = '\0';
-		j++;
-	}
-	return (str);
+	chr[count] = '\0';
+	return (chr);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	char	**rtn;
-	int		nbr;
+	int		index;
+	char	**tab;
+    size_t	i;
+    size_t	j;
 
-	if (!s)
-	{
-		rtn = malloc(sizeof(char *) * 1);
-		if (!rtn)
-			return (0);
-		*rtn = 0;
-		return (rtn);
-	}
-	nbr = ft_check(s, c);
-	rtn = malloc(sizeof(char *) * (nbr + 1));
-	if (!rtn)
-		return (0);
-	else if (ft_mallock(rtn, s, c) != 0)
-		ft_strcpy(rtn, s, c);
-	rtn[nbr] = 0;
-	return (rtn);
+    tab = malloc(sizeof(char) * (ft_check(s, c)) + 1);
+    if (!s || !tab)
+        return (0);
+    i = 0;
+    j = 0;
+    index = -1;
+    while (i <= ft_strlen(s))
+    {
+        if (s[i] != c && index < 0)
+            index = i;
+        else if ((s[i] == c || i == ft_strlen((char *)s)) && index >= 0)
+        {
+            tab[j++] = ft_minitrim(s, index, i);
+            index = -1;
+        }
+        i++;
+    }
+    tab[j] = 0;
+    return (tab);
 }

@@ -6,73 +6,47 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:21:36 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/08 09:49:42 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/08 20:01:43 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_check(long n)
+static size_t	ft_getnumbers(int n)
 {
-	size_t	check;
+	size_t count;
 
-	check = 0;
-	if (n < 0)
-	{
-		check++;
-		n = -n;
-	}
-	while (n >= 1)
-	{
-		check++;
-		n /= 10;
-	}
-	return (check);
-}
-
-static char	*ft_mall(char *rtn, long nb, int len, int isneg)
-{
-	if (nb != 0)
-	{
-		rtn = malloc(len + 1);
-	}
-	else
-		return (rtn);
-	if (!rtn)
-		return (0);
-	isneg = 0;
-	if (nb < 0)
-	{
-		isneg = 1;
-		nb = -nb;
-		rtn[0] = '-';
-	}
-	rtn[len] = '\0';
-	while (--len)
-	{
-		rtn[len] = (nb % 10) + '0';
-		nb /= 10;
-	}
-	if (isneg == 1)
-		rtn[0] = '-';
-	else
-		rtn[0] = (nb % 10) + '0';
-	return (rtn);
+	count = 1;
+	while (n /= 10)
+		count++;
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	int		check;
-	char	*rtn;
-	int		negnb;
+	long int	l_nbr;
+	size_t		nbr;
+	char		*rst;
 
-	check = ft_check(n);
-	negnb = 0;
-	rtn = ft_strdup("0");
-	rtn = ft_mall(rtn, n, check, negnb);
-	if (!rtn)
+	l_nbr = n;
+	nbr = ft_getnumbers(n);
+	if (n < 0)
+	{
+		l_nbr *= -1;
+		nbr++;
+	}
+	rst = (char *)malloc(sizeof(char) * (nbr + 1));
+	if (!rst)
 		return (0);
-	return (rtn);
+	*(rst + nbr) = 0;
+	while (nbr--)
+	{
+		*(rst + nbr) = l_nbr % 10 + '0';
+		l_nbr = l_nbr / 10;
+	}
+	if (n < 0)
+		*(rst + 0) = '-';
+	return (rst);
 }
 
 /*#include <stdlib.h>

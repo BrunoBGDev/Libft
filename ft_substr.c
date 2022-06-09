@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 14:29:01 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/08 15:47:57 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/08 19:36:52 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*rst;
 	size_t	count;
+	size_t	s_len;
 
 	if (!s)
 		return (0);
-	if (start > ft_strlen(s))
-	{
-		rst = (char *)malloc(sizeof(char));
-		*rst = '\0';
-		return (rst);
-	}
-	rst = (char *)malloc(sizeof(char) * len);
+	s_len = ft_strlen(s);
+	if (start > s_len)
+		return (ft_strdup(""));
+	if (start + len > s_len)
+		len = s_len - start;
+	count = len + 1;
+	rst = (char *)malloc(count * sizeof(char));
 	if (!rst)
 		return (0);
-	rst[0] = '\0';
-	count = 0;
-	while (len > 0)
-	{
-		rst[count] = s[start];	
-		count++;
-		start++;
-		len--;
-	}
-	rst[count] = '\0';
+	ft_memcpy(rst, s + start, len);
+	rst[len] = '\0';
 	return (rst);
 }
 
