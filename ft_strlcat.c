@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:19:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/08 10:21:50 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/09 15:49:44 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	str = (char *)src;
 	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(str);
-	rtn = 0;
+	src_len = ft_strlen(src);
 	count = 0;
 	if (dstsize > dst_len)
 		rtn = src_len + dst_len;
 	else
 		rtn = src_len + dstsize;
 	while (str[count] && (dst_len + 1) < dstsize)
-	{
-		dst[dst_len] = str[count];
-		dst_len++;
-		count++;
-	}		
+		dst[dst_len++] = str[count++];
 	dst[dst_len] = '\0';
 	return (rtn);
 }

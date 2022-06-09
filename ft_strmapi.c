@@ -6,23 +6,11 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:29:37 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/02 20:29:06 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/09 12:07:32 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_slen(char *str)
-{
-	size_t	len;
-
-	len = 0;
-	if (!str)
-		return (0);
-	while (str[len] != '\0')
-		len++;
-	return (len);
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -30,11 +18,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 
 	count = 0;
-	if (s == NULL || f == NULL)
-		return (NULL);
-	str = (char *)malloc(sizeof(char) * ft_slen((char *)s) + 1);
+	if (!s || !f)
+		return (0);
+	str = (char *)malloc(sizeof(char) * ft_strlen((char *)s) + 1);
 	if (!str)
-		return (NULL);
+		return (0);
 	while (s[count] != '\0')
 	{
 		str[count] = f(count, s[count]);

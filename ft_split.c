@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:20:22 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/08 21:42:23 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/09 12:41:11 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 static int	ft_check(const char *s, char c)
 {
-	size_t	nb;
-	int		count;
+	int		i;
+	int		j;
+	char	end;
 
-	nb = 0;
-	count = 0;
-	while (*s)
+	i = 0;
+	j = 0;
+	end = c;
+	while (s[i] != '\0')
 	{
-		if (*s != c && nb == 0)
-		{
-			nb = 1;
-			count++;
-		}
-		else if (*s == c)
-			nb = 0;
-		s++;
+		if (end == c && s[i] != c)
+			j++;
+		end = s[i];
+		i++;
 	}
-	return (count);
+	return (j);
 }
 
 static char	*ft_minitrim(const char *str, int start, int end)
@@ -54,28 +52,28 @@ static char	*ft_minitrim(const char *str, int start, int end)
 
 char	**ft_split(const char *s, char c)
 {
-	int		index;
-	char	**tab;
-    size_t	i;
-    size_t	j;
+	int		array;
+	char	**rst;
+	size_t	count;
+	size_t	i;
 
-    tab = malloc(sizeof(char) * (ft_check(s, c)) + 1);
-    if (!s || !tab)
-        return (0);
-    i = 0;
-    j = 0;
-    index = -1;
-    while (i <= ft_strlen(s))
-    {
-        if (s[i] != c && index < 0)
-            index = i;
-        else if ((s[i] == c || i == ft_strlen((char *)s)) && index >= 0)
-        {
-            tab[j++] = ft_minitrim(s, index, i);
-            index = -1;
-        }
-        i++;
-    }
-    tab[j] = 0;
-    return (tab);
+	rst = (char **)malloc(((ft_check(s, c)) + 1) * sizeof(*rst));
+	if (!rst)
+		return (0);
+	count = 0;
+	i = 0;
+	array = -1;
+	while (count <= ft_strlen(s))
+	{
+		if (s[count] != c && array < 0)
+			array = count;
+		else if ((s[count] == c || count == ft_strlen((char *)s)) && array >= 0)
+		{
+			rst[i++] = ft_minitrim(s, array, count);
+			array = -1;
+		}
+		count++;
+	}
+	rst[i] = 0;
+	return (rst);
 }
