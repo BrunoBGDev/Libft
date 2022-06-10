@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:19:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/09 15:49:44 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/09 23:39:24 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,31 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*str;
-	size_t	count;
-	size_t	rtn;
-	size_t	src_len;
+	char	*dest;
+	char	*source;
+	size_t	size;
 	size_t	dst_len;
 
-	str = (char *)src;
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	count = 0;
-	if (dstsize > dst_len)
-		rtn = src_len + dst_len;
-	else
-		rtn = src_len + dstsize;
-	while (str[count] && (dst_len + 1) < dstsize)
-		dst[dst_len++] = str[count++];
-	dst[dst_len] = '\0';
-	return (rtn);
+	dest = dst;
+	source = (char *)src;
+	size = dstsize;
+	while (size-- != 0 && *dest != '\0')
+		dest++;
+	dst_len = dest - dst;
+	size = dstsize - dst_len;
+	if (size == 0)
+		return (dst_len + ft_strlen(src));
+	while (*source != '\0')
+	{
+		if (size != 1)
+		{
+			*dest++ = *source;
+			size--;
+		}
+		source++;
+	}
+	*dest = '\0';
+	return (dst_len + (source - src));
 }
 
 /*#include <stdio.h>
