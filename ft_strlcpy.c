@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 09:09:12 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/07 13:36:28 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/10 13:46:13 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -31,16 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		count++;
 	return (src_len);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-	char	str1[] = "Test of the function.";
-	char	result[30] = "";
-
-	printf("%s\n", result);
-    ft_strlcpy(result, str1, 20);
-    printf("%s\n", result);
-	return (0);
-}*/

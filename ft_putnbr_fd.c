@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:21:44 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/06 12:32:17 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/10 13:41:38 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_ptchar_fd((n % 10) + '0', fd);
 }
-
-/*#include <stdio.h>
-
- int	main(void)
-{
-	ft_putnbr_fd(-1223334, 1);
-	printf("\n");
-}*/

@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 14:29:01 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/08 19:36:52 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/10 14:16:37 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	rst[len] = '\0';
 	return (rst);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-	char	str[50] = "Teste de ft_substr em c! 42 Rio!";
-
-	printf("%s\n", str);
-	ft_substr(str, 0, 0);
-	printf("%s\n", str);
-	return (0);
-}*/

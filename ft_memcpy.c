@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:24:55 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/03 08:59:41 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/10 13:38:19 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,25 +26,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	source[] = "42Rio!";
-	char	dest[] = "Cadete ";
-	char	dest2[] = "Cadete";
-	char	*ft_mcpy;
-	char	*mcpy;
-	
-	printf("[dest] Before ft_memcpy: %s\n", dest);
-	ft_mcpy = ft_memcpy(dest, source, 6);
-	printf("[dest] After ft_memcpy: %s\n", dest);
-	printf("\n");
-	
-	printf("[dest2] Before memcpy: %s\n", dest2);
-	mcpy = memcpy(dest2, source, 6);
-	printf("[dest2] After memcpy: %s\n", dest2);
-	return (0);
-}*/

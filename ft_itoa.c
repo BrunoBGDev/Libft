@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:21:36 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/09 15:49:52 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/10 14:28:44 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_getnumbers(int n)
 {
-	size_t count;
+	size_t	count;
 
 	count = 1;
 	while (n /= 10)
@@ -48,17 +48,3 @@ char	*ft_itoa(int n)
 		*(rst + 0) = '-';
 	return (rst);
 }
-
-/*#include <stdlib.h>
-#include <stdio.h>
-
-int main () 
-{
-	char	*val1;
-	int		int1 = -855;
-
-   val1 = ft_itoa(int1);
-   printf("Int value on [int1] = %d\n", int1);
-   printf("String value with ft_itoa = %s\n", val1);
-   return(0);
-}*/
