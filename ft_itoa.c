@@ -6,19 +6,27 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:21:36 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/10 14:28:44 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/11 00:18:33 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_getnumbers(int n)
+static size_t	ft_getnumbers(long int n)
 {
 	size_t	count;
 
-	count = 1;
-	while (n /= 10)
+	count = 0;
+	if (n < 0)
+	{
+		n *= -1;
 		count++;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	}
 	return (count);
 }
 
