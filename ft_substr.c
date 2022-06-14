@@ -6,7 +6,7 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 14:29:01 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/12 12:40:08 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/14 10:08:42 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	s_len = ft_strlen(s);
 	if (start > s_len)
-		return (ft_strdup(""));
-	if (start + len > s_len)
+		len = 0;
+	else if (start + len > s_len)
 		len = s_len - start;
 	count = len + 1;
 	rst = (char *)malloc(count * sizeof(char));

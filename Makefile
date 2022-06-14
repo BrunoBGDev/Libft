@@ -6,7 +6,7 @@
 #    By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 08:46:58 by bbraga            #+#    #+#              #
-#    Updated: 2022/06/13 10:49:53 by bbraga           ###   ########.fr        #
+#    Updated: 2022/06/14 11:26:27 by bbraga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,21 +37,21 @@ CC = cc
 CC_FLAGS = -Wall -Wextra -Werror
  
 $(OBJS_DIR)%.o : %.c libft.h
-	@cc $(CC_FLAGS) -c $< -o $@
+	cc $(CC_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@ar r $(NAME) $(OBJS)
+	ar r $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	@rm -rf $(OBJS) $(BONUS)
+	rm -rf $(OBJS) $(BONUS)
 fclean: clean
-		@rm -f $(NAME)
+		rm -f $(NAME)
 
 re: fclean all
 
 bonus: $(BONUS)
-	@ar r $(NAME) $(BONUS)
+	ar r $(NAME) $(BONUS)
 
 .PHONY: all clean fclean re
