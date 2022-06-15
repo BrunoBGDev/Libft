@@ -6,10 +6,9 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:28:53 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/10 13:43:11 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/14 12:04:18 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

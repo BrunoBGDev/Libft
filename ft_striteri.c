@@ -6,18 +6,16 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 07:14:01 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/10 13:44:06 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/14 12:08:34 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	count;
 
 	count = 0;
-	if (s != NULL && f != NULL)
+	if (s != 0 && f != 0)
 	{
 		while (s[count] != '\0')
 		{

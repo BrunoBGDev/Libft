@@ -6,9 +6,10 @@
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:24:55 by bbraga            #+#    #+#             */
-/*   Updated: 2022/06/14 10:03:28 by bbraga           ###   ########.fr       */
+/*   Updated: 2022/06/14 11:45:16 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
