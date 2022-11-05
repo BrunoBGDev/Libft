@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 16:09:33 by bbraga            #+#    #+#             */
-/*   Updated: 2022/10/07 18:21:57 by bbraga           ###   ########.fr       */
+/*   Created: 2022/06/23 13:53:05 by bbraga            #+#    #+#             */
+/*   Updated: 2022/06/29 16:12:13 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_strlen(const char *s)
-{
-	size_t	len;
+# include <stdlib.h>
+# include <unistd.h>
 
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
+
+char	*ft_get_line(char *stack);
+char	*get_next_line(int fd);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *stack, char *buff);
+size_t	ft_strlen(const char *s);
+
+#endif

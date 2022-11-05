@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbraga <bruno.braga.design@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 16:09:33 by bbraga            #+#    #+#             */
-/*   Updated: 2022/10/07 18:21:57 by bbraga           ###   ########.fr       */
+/*   Created: 2022/06/19 17:30:32 by bbraga            #+#    #+#             */
+/*   Updated: 2022/06/19 23:33:18 by bbraga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	len;
+	write(fd, &c, 1);
+}
 
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
+void	ft_ptchr(char c, int *len)
+{
+	*len += write(1, &c, 1);
+}
+
+void	ft_putstrl(char *str, int *len)
+{
+	int	count;
+
+	count = 0;
+	while (str[count])
+	{
+		ft_ptchr(str[count], len);
+		count++;
+	}
 }
